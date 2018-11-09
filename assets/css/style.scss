@@ -1,0 +1,385 @@
+@import 'bourbon';
+@import 'mixins';
+@font-face {
+	font-family: 'faa';
+	src: url('../fonts/faa.eot?q6baza');
+	src: url('../fonts/faa.eot?q6baza#iefix') format('embedded-opentype'), url('../fonts/faa.ttf?q6baza') format('truetype'), url('../fonts/faa.woff?q6baza') format('woff'), url('../fonts/faa.svg?q6baza#faa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	// use !important to prevent issues with browser extensions that change fonts
+	font-family: 'faa' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	// Better Font Rendering ===========
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bars:before {
+	content: "\f0c9";
+}
+
+.icon-navicon:before {
+	content: "\f0c9";
+}
+
+.icon-reorder:before {
+	content: "\f0c9";
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Roboto", "ubuntu", serif;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	body {
+		background: #fff;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		overflow-x: hidden;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			font-weight: 300;
+			margin: 0.4em 0;
+		}
+		header {
+			background-color: #fff;
+			overflow: hidden;
+			//-moz-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.07);
+			//-webkit-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.07);
+			//box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.07);
+			margin: 0 12px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 3;
+			nav {
+				padding: 1px 0 0 0;
+				div.logo {
+					float: left;
+					height: 50px;
+					background-size: contain;
+					background-image: image-url('logo.png');
+					background-repeat: no-repeat;
+					background-position: 4px;
+					h1 {
+						margin: 0;
+					}
+					a {
+						line-height: 50px;
+						padding-left: 60px;
+						display: inline-block;
+						overflow: hidden;
+						text-transform: uppercase;
+						color: #ec523f;
+						font-size: 15px;
+						font-weight: 400;
+						text-decoration: none;
+						-webkit-transition: all 200ms ease-in-out;
+						-moz-transition: all 200ms ease-in-out;
+						transition: all 200ms ease-in-out;
+					}
+				}
+				.toggle-menu {
+					margin-top: 7px;
+					margin-right: 10px;
+					width: 36px;
+					height: 36px;
+					float: right;
+					text-align: center;
+					line-height: 36px;
+					font-size: 14px;
+					background: #EC523F;
+					display: block;
+					color: white;
+					cursor: pointer;
+					&.active +.menu-first {
+						opacity: 1;
+						height: auto;
+						margin-top: 10px;
+						transition: opacity 1s, height 0;
+					}
+				}
+				.menu-first {
+					margin: 0;
+					padding: 0 12px;
+					list-style: none;
+					float: right;
+					overflow: auto;
+					width: 100%;
+					opacity: 0;
+					height: 0;
+					/* background: rgba(50, 50, 50, 0.88); */
+					transition: opacity 1s, height 0 1s;
+					/* transition: all 0.3s ease; */
+					li {
+						display: block;
+						margin: 0 15px;
+						text-align: right;
+						a {
+							line-height: 40px;
+							padding-top: 10px;
+							text-transform: uppercase;
+							font-size: 14px;
+							color: #444444;
+							text-decoration: none;
+							-webkit-transition: all 200ms ease-in-out;
+							-moz-transition: all 200ms ease-in-out;
+							transition: all 200ms ease-in-out;
+							&:hover,
+							&:focus,
+							&.active {
+								color: #ec523f;
+							}
+						}
+					}
+				}
+				@include min-screen(1260px) {
+					div.logo {
+						height: 100px;
+						a {
+							line-height: 1.1em;
+							padding-left: 110px;
+							font-size: 28px;
+							width: 340px;
+							text-align: center;
+							padding-top: 22px;
+						}
+					}
+					.toggle-menu {
+						display: none;
+					}
+					.menu-first {
+						margin: 0;
+						padding: 0 12px;
+						list-style: none;
+						float: right;
+						overflow: auto;
+						width: auto;
+						opacity: 1;
+						height: auto;
+						/* background: rgba(50, 50, 50, 0.88); */
+						transition: opacity 1s, height 0 1s;
+						/* transition: all 0.3s ease; */
+						li {
+							display: inline-block;
+							text-align: center;
+							margin: 0 8px;
+							a {
+								font-size: 18px;
+								line-height: 100px;
+								padding-top: 37px;
+								&:focus,
+								&:hover,
+								&.active {
+									border-top: 3px solid #ec523f;
+									color: #ec523f;
+								}
+							}
+						}
+					}
+				}
+			}
+			@include min-screen(1260px) {
+				-moz-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.07);
+				-webkit-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.07);
+				box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.07);
+			}
+		}
+		article {
+			margin-top: 52px;
+			padding: 0 12px;
+			overflow-x: hidden;
+			@include min-screen(1260px) {
+				margin-top: 102px;
+			}
+			section {
+				position: relative;
+				border-top: thin solid #eee;
+				max-width: 1260px;
+				margin: 0 auto 18px;
+				overflow-x: hidden;
+				@include clearfix;
+				>div {
+					margin: 0 10px;
+				}
+				>h2 {
+					background: #eaeaea;
+					margin: 0;
+					padding: 0.4em;
+				}
+				&#home {
+					max-width: 100%;
+					min-height: 90vh;
+					min-height: calc(100vh - 64px);
+					@include min-screen(1260px) {
+						min-height: 85vh;
+						min-height: calc(100vh - 114px) !important;
+					}
+					background: image-url("home.jpg") top left no-repeat;
+					background-size: cover;
+					.intro {
+						padding: 0 18px;
+						position: relative;
+						color: #fafafa;
+						font-size: 18px;
+						text-shadow: 1px 1px 1px #333;
+						font-weight: 300;
+						max-width: 720px;
+						z-index: 2;
+						margin: 0;
+					}
+					.overlay {
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						background: rgba(0, 5, 0, 0.72);
+						z-index: 1;
+						margin: 0;
+					}
+					@include min-screen(1260px) {
+						.intro {
+							font-size: 21px;
+						}
+					}
+				}
+				&#news {
+					>div {
+						margin: 8px 0;
+					}
+					.latest_members {
+						border: 1px solid #e9ebee;
+						background: #f6f7f9;
+						h2 {
+							margin: 0;
+							padding: 0.4em 8px;
+							background: #fff;
+							font-size: 18px;
+							font-weight: 400;
+						}
+						ul {
+							list-style: none;
+							margin: 8px;
+							padding: 8px;
+							background: #fff;
+							font-size: 1.1em;
+							line-height: 1.5em;
+							border-radius: 2px;
+							box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+						}
+					}
+					.fb-page.feed {
+						display: none;
+					}
+					.fb-page,
+					.fb-page span,
+					.fb-page span iframe[style] {
+						width: 100% !important;
+					}
+					@include min-screen(1260px) {
+						>div {
+							float: left;
+							width: 33.33%;
+							margin: 8px;
+							max-width: 404px;
+						}
+						.fb-page.feed {
+							display: block;
+						}
+					}
+				}
+				&#patron {
+					img {
+						width: 100%;
+						margin: 0 0 12px 0;
+						@include min-screen(1260px) {
+							width: 480px;
+							float: left;
+							clear: left;
+							margin-right: 18px;
+						}
+					}
+				}
+				&#contact {
+					a {
+						img {
+							width: 150px;
+						}
+					}
+				}
+				&#members {
+					>div {
+						overflow-x: hidden;
+						>div {
+							width: auto;
+							overflow-x: hidden;
+							@include max-screen(960px) {
+								table {
+									width: 100% !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		footer {}
+		[placeholder]::-webkit-input-placeholder {
+			opacity: 0.6;
+		}
+		[placeholder]:focus::-webkit-input-placeholder {
+			transition: opacity 0.2s ease;
+			opacity: 0.2;
+		}
+		.dataTables_wrapper {
+			width: 100%;
+			//max-width: 960px;
+			margin: 12px auto 32px;
+			thead {
+				th,
+				td {
+					border-bottom: thin dotted rgba(128, 128, 128, 0.2);
+					text-align: left;
+				}
+			}
+			tr {
+				&:nth-child(even) {
+					background: rgba(196, 196, 196, 0.1)
+				}
+			}
+			td {
+				text-align: left;
+			}
+			&.no-footer,
+			table.no-footer {
+				border-bottom: thin dotted rgba(128, 128, 128, 0.2);
+			}
+			a {
+				color: #333;
+			}
+		}
+	}
+}

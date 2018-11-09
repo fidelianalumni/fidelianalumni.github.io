@@ -1,0 +1,31 @@
+{
+	"regex": {
+		"prefix": "(?:<!--|\\/\\*|\\/\\/|#) *@?(",
+		"suffix": "):? *(.*?) ?(?=-->|\\*/|\\n|$)"
+	},
+	"tags": [
+		{
+			"name": "INFO",
+			"color": "#696"
+		},
+		{
+			"name": "BUG",
+			"color": "#F66"
+		},
+		"FUTURE"
+	],
+	"case": true,
+	"search": {
+		"scope": "project",
+		"excludeFolders": [
+			"node_modules",
+            "geoip",
+			".vagrant",
+			".git"
+		],
+		"excludeFiles": []
+	},
+	"sort": {
+		"done": true
+	}
+}
